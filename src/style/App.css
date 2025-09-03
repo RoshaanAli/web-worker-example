@@ -1,0 +1,160 @@
+h1 {
+    margin: 0;
+}
+
+.container {
+    background-color: #ffffff;
+    height: 100vh;
+    width: 100wh;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.heading {
+    color: antiquewhite;
+    font-size: 50px;
+    text-align: center;
+    margin-top: 5%;
+}
+
+.text {
+    font-size: medium;
+    text-align: center;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: space-around;
+    height: 8%;
+    align-items: center;
+    max-width: 800px;
+    margin: 3% auto;
+}
+
+.btn {
+    background-color: rgba(51, 153, 255, 1);
+    border-radius: 50px;
+    width: 25%;
+    height: 80%;
+    border-width: 0;
+    transition: transform 0.1s ease, background-color 0.3s;
+}
+
+.btn p {
+    color: #ffffff;
+}
+
+.btn:active {
+    transform: scale(0.95);
+    background-color: rgba(51, 153, 255, 0.5);
+}
+
+.inputContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    /* optional */
+}
+
+.inputBox {
+    padding: 10px 16px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 200px;
+}
+
+.content {
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.sub-heading {
+    color: rgb(51, 153, 255);
+    /* font-size: 50px; */
+    text-align: center;
+    /* margin-top: 5%; */
+}
+
+.resultContainer {
+    background-color: bisque;
+}
+
+.userListContainer {
+    background-color: aquamarine;
+}
+
+.text.userItem {
+    border: 2px solid rgb(51, 153, 255);
+    padding: 10px 0 10px 0;
+    border-radius: 50px;
+}
+
+@media (max-width: 768px) {
+    .heading {
+        font-size: 45px;
+        margin-top: 20%;
+    }
+
+    .text {
+        font-size: 16px;
+    }
+
+    .btn-container {
+        height: 10%;
+    }
+
+    .btn {
+        width: 40%;
+        height: 60%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+@media (max-width: 769px) {
+    .text {
+        font-size: 16px;
+    }
+
+    .btn-container {
+        height: 10%;
+    }
+
+    .btn {
+        width: 40%;
+        height: 60%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .heading {
+        font-size: 40px;
+        margin-top: 30%;
+    }
+
+    .text {
+        font-size: 14px;
+    }
+
+    .btn-container {
+        display: flex;
+        flex-direction: column;
+        height: 10%;
+    }
+
+    .btn {
+        width: 75%;
+        height: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
