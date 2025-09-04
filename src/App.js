@@ -26,7 +26,7 @@ function App() {
   const webWorker = new WebWorker(worker)
 
   const onTaskStart = () => {
-    if (number) {
+    if (number && /^[0-9]+$/.test(number)) {
       setIsWithWebWorker(true)
       setIsLoading(true)
       setResult(null)
@@ -43,7 +43,7 @@ function App() {
   }
 
   const onTaskStartWithoutWebWorker = () => {
-    if (number) {
+    if (number && /^[0-9]+$/.test(number)) {
       setIsWithWebWorker(false)
       setIsLoading(true)
       setResult(null)
@@ -92,7 +92,10 @@ function App() {
         <p>Web Workers help keep the UI smooth by moving heavy work off the main thread.</p>
       </div>
       <div className="inputContainer">
-        <input value={number} placeholder='Enter Number' onChange={e => setNumber(e.target.value)} className='inputBox' />
+        <input type='number' value={number} placeholder='Enter Number' onChange={e => {
+          setNumber(e.target.value)
+          setResult(null)
+          }} className='inputBox' />
       </div>
       <div className='btn-container'>
         <button className='btn' onClick={onTaskStart} disabled={isLoading}>
