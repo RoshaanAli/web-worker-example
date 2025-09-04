@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# 🧵 React Web Worker Performance Test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This React project demonstrates the performance difference between running a heavy loop on the **main thread** vs using a **Web Worker** to offload the work to a separate thread — keeping the UI responsive.
 
-## Available Scripts
+## 🚀 How to Use
 
-In the project directory, you can run:
+1. **Enter a Number**  
+   Input how many times the loop should run.
 
-### `npm start`
+2. **Start the Test**  
+   Click a button to run the loop:
+   - **Without Web Worker** – runs the loop on the main thread.
+   - **With Web Worker** – runs the loop in a separate thread.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. **Click a User Item**  
+   Click on any user item in the list. Its text will change immediately **only if the UI is still responsive**.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+   - ❌ **Without Web Worker**: Main thread is busy, so UI freezes, and text updates are delayed.
+   - ✅ **With Web Worker**: Main thread is free, so UI updates happen instantly.
 
-### `npm test`
+## 💡 Why This Matters
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+In real-world apps, blocking the main thread (e.g., with heavy calculations or loops) causes the UI to become unresponsive. **Web Workers** solve this by offloading the heavy tasks to a background thread.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🧱 Tech Stack
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- React (with Hooks)
+- JavaScript
+- Web Workers API
+- CSS (for basic styling)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 🧪 Example Use Case
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+This is a great example for:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Teaching the difference between sync and async behavior in React
+- Demonstrating Web Worker integration in a React app
+- Showing how to keep the UI responsive under load
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🛠️ Setup & Run
 
-## Learn More
+```bash
+# Install dependencies
+npm install
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Start the development server
+npm start
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- A link to a live demo ([web-worker-Example-live](https://web-worker-example.surge.sh/))
